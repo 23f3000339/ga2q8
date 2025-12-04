@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Student Email: 23f3000339@ds.study.iitm.ac.in
+
+def analyze_healthcare_performance():
+    # 1. Dataset
+    data = {
+        'Quarter': ['Q1', 'Q2', 'Q3', 'Q4'],
+        'Score': [3.53, 3.29, 5.74, 5.05]
+    }
+    df = pd.DataFrame(data)
+    
+    # 2. Key Metrics
+    average_score = df['Score'].mean()
+    benchmark = 4.5
+    
+    print(f"Yearly Average Score: {average_score}")
+    
+    # 3. Visualization
+    plt.figure(figsize=(10, 6))
+    
+    # Plotting the trend line
+    plt.plot(df['Quarter'], df['Score'], marker='o', linewidth=2, label='Patient Satisfaction', color='#2c3e50')
+    
+    # Plotting the benchmark line
+    plt.axhline(y=benchmark, color='r', linestyle='--', label=f'Target ({benchmark})')
+    
+    # Annotations
+    for x, y in zip(df['Quarter'], df['Score']):
+        plt.text(x, y + 0.1, f"{y}", ha='center')
+
+    plt.title(f'2024 Patient Satisfaction Trend (Avg: {average_score})')
+    plt.xlabel('Quarter')
+    plt.ylabel('Satisfaction Score (1-10)')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    
+    # Save the chart
+    plt.savefig('satisfaction_trend.png')
+    print("Chart saved as satisfaction_trend.png")
+
+if __name__ == "__main__":
+    analyze_healthcare_performance()
