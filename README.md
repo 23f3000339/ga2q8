@@ -4,7 +4,7 @@
 
 ## Executive Summary
 This analysis reviews the patient satisfaction scores for the fiscal year 2024 against the industry benchmark.
-this is good
+
 ### Data Overview
 - **Q1:** 3.53
 - **Q2:** 3.29 (Lowest point)
